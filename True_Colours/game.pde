@@ -61,20 +61,8 @@ void randomGen() {
 
 //decision -----------------------------------------------------------------------------
 void decision(float x, float y, float w, float h, int choice) {
-  if (mouseX >= x - w/2 && mouseX <= x + w/2 && mouseY >= y - h/2 && mouseY <= y + h/2) {
-    wordMatchGuess = choice;
-    if (wordMatchGuess == wordMatch) {
-      soundEffects[1].rewind();
-      soundEffects[1].play();
-      score++;
-      wordSize = 1;
-    }
-    else if (wordMatchGuess != wordMatch) {
-      soundEffects[0].rewind();
-      soundEffects[0].play();
-      mode = GAMEOVER;
-    }
-  }
+  if (mouseX >= x - w/2 && mouseX <= x + w/2 && mouseY >= y - h/2 && mouseY <= y + h/2) 
+    rightOrWrong(choice);
 }
 
 //decision2 -----------------------------------------------------------------------------
